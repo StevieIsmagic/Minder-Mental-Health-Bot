@@ -73,7 +73,7 @@ class Conversation extends Component {
       this.nextQuestion();
     })
   }
-  
+
   finalMessage() {
     return {
       text: 'Thanks, talk to you soon!',
@@ -82,5 +82,48 @@ class Conversation extends Component {
     }
   }
 
+  nextQuestion() {
+    this.setState({
+      questionNumber: this.state.questionNumber + 1,
+      loadingBot: true,
+    }, () => {
+      if (this.state.questionNumber < this.state.questions.length) {
+        setTimeout(() => {
+          this.setState({
+            messages: [
+              ...this.state.messages,
+              this.state.questions[this.state.questionNumber],              
+            ],
+            loadingBot: false,
+          })
+
+          if (this.state.questions[this.state.questionNumber].buttons) {
+            this.setState({
+              disabledUserInput: true
+            });
+          } else {
+            this.setState({
+              disabledUserInput: false
+            });
+            this.userInput.focus();
+          }
+        }, 500);
+      } else {
+        setTimeout(() => {
+          this.setState({
+            messages: [
+              ...this.state.messages,
+              this.finalMessage(),
+            ],
+            loadingBot: false,
+            disabledUserInput: true,
+          });
+          this.props.onEnded(this.state.answers)
+        }, 500);
+      }
+    })
+  }
+
+  
 
 }
