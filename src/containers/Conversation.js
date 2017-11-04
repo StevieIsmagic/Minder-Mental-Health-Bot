@@ -1,4 +1,5 @@
 /*
+COMPLETE
 * Conversation UI
 */
 
@@ -124,6 +125,63 @@ class Conversation extends Component {
     })
   }
 
-  
+  submitUserInput(e) {
+    e.preventDefault();
+    if (this.state.userInput.length > 0) {
+      this.setState({
+        messages: [
+          ...this.state.messages,
+          {
+            text: this.state.userInput,
+            type: 'USER'
+          }
+        ],
+        answers: this.state.questions[this.state.questionNumber].key ? {
+          ...this.state.answers,
+          [this.state.questions[this.state.questionNumber].key]: this.state.userInput,
+        } : {
+          ...this.state.answers,
+        },
+        userInput: '',
+      }, () => {
+        this.nextQuestion();
+      })
+    }    
+  }
 
+  render() {
+    const { messages, userInput, answers, disabledUserInput } = this.state;
+
+    return (
+      <ThemeProvider theme ={this.props.theme || theme}> 
+        <Container> 
+          <MessageArea innerRef={div => this.MessageArea = div} >
+            {messages.map((message, index) => 
+              <Message 
+                key={index}
+                message={message}
+                answers={answers}
+                onButtonSelect={this.handleButtonSelect}
+                active={messages.length === index + 1}
+              />
+            )}
+             {this.state.loadingBot && <Loading bot/>}
+             {this.state.userInput.length > 0 && <Loading user/>}             
+          </MessageArea>
+          <form onSubmit={e => this.submitUserInput(e)}>
+            <UserInput 
+              type="text"
+              value={userInput}
+              innerRef={input => this.userInput = input }
+              onChange={e => this.handleUserInput(e)}
+              disabled={disabledUserInput}
+            />
+            <SubmitButton>↩</SubmitButton>
+          </form>
+        </Container>    
+      </ThemeProvider>
+    )
+  }
 }
+
+export default Conversation;
