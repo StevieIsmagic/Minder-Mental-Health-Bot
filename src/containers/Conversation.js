@@ -1,5 +1,4 @@
-/*
-COMPLETE
+/**
 * Conversation UI
 */
 
@@ -28,7 +27,7 @@ class Conversation extends Component {
       }),
       questionNumber: 0,
       userInput: '',
-      disabledUserInput: false,
+      disableUserInput: false,
       messages: [],
       answers: {},
       loadingBot: false,
@@ -36,7 +35,7 @@ class Conversation extends Component {
   }
 
   componentWillMount() {
-    const { questions, questionNumber } = this.state;
+    const { questions, questionNumber } = this.state;
 
     this.setState({
       ...this.state,
@@ -67,17 +66,16 @@ class Conversation extends Component {
         }
       ],
       answers: this.state.questions[this.state.questionNumber].key ? 
-      { ...this.state.answers,
+      { ...this.state.answers, 
         [this.state.questions[this.state.questionNumber].key]: select.value,
       } : { ...this.state.answers, },
     }, () => {
       this.nextQuestion();
     })
   }
-
   finalMessage() {
     return {
-      text: 'Thanks, talk to you soon!',
+      text: 'Thank you!',
       type: 'final',
       sender: 'BOT',
     }
@@ -93,18 +91,18 @@ class Conversation extends Component {
           this.setState({
             messages: [
               ...this.state.messages,
-              this.state.questions[this.state.questionNumber],              
+              this.state.questions[this.state.questionNumber],
             ],
             loadingBot: false,
           })
 
           if (this.state.questions[this.state.questionNumber].buttons) {
             this.setState({
-              disabledUserInput: true
+              disableUserInput: true
             });
           } else {
             this.setState({
-              disabledUserInput: false
+              disableUserInput: false
             });
             this.userInput.focus();
           }
@@ -117,7 +115,7 @@ class Conversation extends Component {
               this.finalMessage(),
             ],
             loadingBot: false,
-            disabledUserInput: true,
+            disableUserInput: true,
           });
           this.props.onEnded(this.state.answers)
         }, 500);
@@ -146,41 +144,43 @@ class Conversation extends Component {
       }, () => {
         this.nextQuestion();
       })
-    }    
+    }
   }
 
   render() {
-    const { messages, userInput, answers, disabledUserInput } = this.state;
+    const { messages, userInput, answers, disableUserInput } = this.state;
 
     return (
-      <ThemeProvider theme ={this.props.theme || theme}> 
-        <Container> 
-          <MessageArea innerRef={div => this.MessageArea = div} >
-            {messages.map((message, index) => 
-              <Message 
-                key={index}
-                message={message}
-                answers={answers}
-                onButtonSelect={this.handleButtonSelect}
-                active={messages.length === index + 1}
-              />
-            )}
-             {this.state.loadingBot && <Loading bot/>}
-             {this.state.userInput.length > 0 && <Loading user/>}             
+      <ThemeProvider theme={this.props.theme || theme}>
+        <Container>
+          <MessageArea
+            innerRef={div => this.messageArea = div }
+          >
+          {messages.map((message, index) =>
+            <Message
+              key={index}
+              message={message}
+              answers={answers}
+              onButtonSelect={this.handleButtonSelect}
+              active={messages.length === index + 1}
+            />
+          )}
+          {this.state.loadingBot && <Loading bot/>}
+          {this.state.userInput.length > 0 && <Loading user/>}
           </MessageArea>
           <form onSubmit={e => this.submitUserInput(e)}>
-            <UserInput 
+            <UserInput
               type="text"
               value={userInput}
               innerRef={input => this.userInput = input }
               onChange={e => this.handleUserInput(e)}
-              disabled={disabledUserInput}
+              disabled={disableUserInput}
             />
             <SubmitButton>↩</SubmitButton>
           </form>
-        </Container>    
+        </Container>
       </ThemeProvider>
-    )
+    );
   }
 }
 
