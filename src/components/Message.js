@@ -3,7 +3,7 @@ import { withTheme } from 'styled-components';
 
 import { MessageBlobBot, MessageBlobUser } from '../primitives/MessageBlob';
 import Avatar from '../primitives/Avatar';
-import AnswerButton from '..primitives/AnswerButton';
+import AnswerButton from '../primitives/AnswerButton';
 import Image from '../primitives/Image';
 
 const Message = (props) => {
