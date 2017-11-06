@@ -12,7 +12,7 @@ import Container from '../primitives/Container';
 import UserInput from '../primitives/UserInput';
 import Message from '../components/Message';
 import MessageArea from '../primitives/MessageArea';
-import Loading from '../components/Loading';
+//import Loading from '../components/Loading';
 import SubmitButton from '../primitives/SubmitButton';
 
 class Conversation extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import Conversation from '../containers/Conversation';
+import Conversation from '../containers/Conversation';
 import logo from '../minder1.png';
 import '../App.css';
 
