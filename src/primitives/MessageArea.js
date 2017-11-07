@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const MessageArea = styled.div`
   height: 85%;
-  display: felx;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   margin-bottom: 2%;

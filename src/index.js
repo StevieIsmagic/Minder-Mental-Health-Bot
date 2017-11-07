@@ -10,5 +10,5 @@ import App from './components/App';
 import './global-styles';
 
 
-ReactDOM.render( <App />, document.getElementById('root') );
+ReactDOM.render( <App />, document.getElementById("root") );
 
