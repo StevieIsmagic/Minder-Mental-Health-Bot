@@ -4,11 +4,11 @@ import logo from '../minder1.png';
 import '../App.css';
 
 const theme = {
-  blobColor: 'yellow',
-  userBlobColor: 'deeppink',
-  user: '👀',
-  bot: '😺',
-  baseColor: '#ccc',
+  blobColor: 'pink',
+  userBlobColor: 'pink',
+  user: '🐨',
+  bot: '🐼',
+  baseColor: 'grey',
   font: "'courier', monotype",
   height: '500px',
   width: '500px',

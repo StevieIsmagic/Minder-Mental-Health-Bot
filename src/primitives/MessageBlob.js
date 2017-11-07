@@ -19,14 +19,14 @@ const MessageBlob = styled.div`
   font-weight: 200;
   font-family: ${props => props.theme.font};
   margin-bottom: 1rem;
-  animation: ${fadeIn} 2000ms;
+  animation: ${fadeIn} 4000ms;
 `;
 
 const MessageBlobBot = MessageBlob;
 
 const MessageBlobUser = styled(MessageBlob)`
   right: 0;
-  background: blue;
+  background: teal;
   color: #fff;
   float: right;
   border-radius: 15px 0 15px 15px;
