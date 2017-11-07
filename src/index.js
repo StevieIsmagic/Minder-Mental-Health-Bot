@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import registerServiceWorker from './registerServiceWorker';
-
 import App from './components/App';
-
-// keep this CSS? OR..
-//import './index.css';
-
+import './index.css';
 import './global-styles';
 
 

@@ -1,6 +1,17 @@
-body {
+/* body {
   margin: 10;
   padding: 10;
-  border: 10px solid pink;
+  border: 15px solid pink;
   font-family: sans-serif;
-}
+} */
+
+
+html, body, #root, .App {
+  height: 100%;
+  }
+  body {
+  margin: 10;
+  padding: 10;
+  border: 15px solid pink;
+  
+  }

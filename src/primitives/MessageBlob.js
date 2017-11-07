@@ -25,7 +25,12 @@ const MessageBlob = styled.div`
 const MessageBlobBot = MessageBlob;
 
 const MessageBlobUser = styled(MessageBlob)`
-
+  right: 0;
+  background: blue;
+  color: #fff;
+  float: right;
+  border-radius: 15px 0 15px 15px;
+  margin-right: .25rem;
 `;
 
 export {

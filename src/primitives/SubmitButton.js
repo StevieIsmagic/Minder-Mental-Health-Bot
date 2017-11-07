@@ -11,7 +11,7 @@ const SubmitButton = styled.button`
   bottom: 7%;
   background: none;
   border: 0;
-  color: ${props => props.theme.baseColor};
+  color: green;
 
   &:focus {
     outline: 0;
