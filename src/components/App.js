@@ -17,32 +17,36 @@ const theme = {
 
 
 const questions = [{
-  text: 'Hello, I\'m Minder, a mental health bot!',
+  text: 'Hi there, my name is Minder. I\'m a mental health bot and anything you share with me will remain anonymous. My job is to help you learn about your mental health and I use the same tools your doctor uses.',
+  key: 'intro',
+  buttons: [{
+    text: 'Hello Minder :)',
+    key: 'hello',
+  }]
 }, {
-  text: 'What is your first name?',
-  key: 'firstName',
+  text: 'At any time, feel free to type <FUN FACTS> and I will share with you the latest mental health tips and statistics.',
+  key: 'funFacts',
+  buttons: [{
+    text: 'Ok Cool !',
+    key: 'cool',
+  }]
 }, {
+  text: 'When we finish, I will give you your results and you can choose what you want to do next. Does that sound fair?',
+  key: 'fair',
+  buttons: [{
+    text: 'SURE !',
+    key: 'sure',
+  }]
+}, {
+  text: 'If you decide..',
+  key: 'funFacts',
+  buttons: [{
+    text: 'Ok Cool !',
+    key: 'cool',
+  }]
+},{
   text: 'Have you ever thought about or attempted to kill yourself?',
   key: 'emotion',
-  buttons: [{
-    text: 'Never',
-    value: '1',
-  }, {
-    text: 'It was just a brief passing thought',
-    value: '2',
-  }, {
-    text: 'I have had a plan at least once to kill myself but did not try to do it',
-    value: '3',
-  }, {
-    text: 'I have had a plan at least once to kill myself and really wanted to die',
-    value: '4',
-  }, {
-    text: 'I have attempted to kill myself, but did not want to die',
-    value: '5',
-  }, {
-    text: 'I have attempted to kill myself, and really hoped to die',
-    value: '6',
-  }]
 }, {
   text: 'Do you like this image?',
   key: 'imageLike',

@@ -2,8 +2,10 @@
   "name": "minder-mental-health-bot",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://StevieIsMagic.github.io/Minder-Mental-Health-Bot",
   "dependencies": {
-
+    "auto-bind": "^1.1.0",
+    "gh-pages": "^1.0.0",
     "node": "^9.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -11,6 +13,8 @@
     "styled-components": "^2.2.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
