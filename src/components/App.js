@@ -17,46 +17,39 @@ const theme = {
 
 
 const questions = [{
-  text: 'Hi there, my name is Minder. I\'m a mental health bot and anything you share with me will remain anonymous. My job is to help you learn about your mental health and I use the same tools your doctor uses.',
+  text: 'Hi there, my name is Minder. I\'m a mental health bot and anything you share with me will remain anonymous. I use the same assessment tools your doctor uses and my job is to help you learn more about your mental health.',
   key: 'intro',
   buttons: [{
     text: 'Hello Minder :)',
     key: 'hello',
   }]
 }, {
-  text: 'At any time, feel free to type <FUN FACTS> and I will share with you the latest mental health tips and statistics.',
-  key: 'funFacts',
-  buttons: [{
-    text: 'Ok Cool !',
-    key: 'cool',
-  }]
-}, {
   text: 'When we finish, I will give you your results and you can choose what you want to do next. Does that sound fair?',
   key: 'fair',
   buttons: [{
-    text: 'SURE !',
+    text: 'Yes, sounds good!',
     key: 'sure',
   }]
 }, {
-  text: 'If you decide..',
+  text: 'If you decide to connect immediately with additional health resources, I can help you do that. You can also take these results to your doctor and it will help them give you better care too. Or you may just want to keep the results handy and stay better informed about your current mental state.',
   key: 'funFacts',
   buttons: [{
-    text: 'Ok Cool !',
-    key: 'cool',
+    text: 'Yes, please!',
+    key: 'yes',
   }]
 },{
-  text: 'Have you ever thought about or attempted to kill yourself?',
-  key: 'emotion',
-}, {
-  text: 'Do you like this image?',
-  key: 'imageLike',
-  image: 'https://unsplash.it/400/300/?random',
+  text: 'Lastly, if at any time you want to talk to a live mental health professional, just click the <HELP> button located to the right of this dialogue box, and you will be immediately connected to one. Does this sound good?',
+  key: 'live',
   buttons: [{
-    text: 'Yes, looks great!',
-    value: 'yes',
-  }, {
-    text: 'No really...',
-    value: 'no',
+    text: 'Sounds Good!',
+    key: 'good',
+  }]
+},{
+  text: 'Awesome, so let\'s begin!',
+  key: 'funFacts',
+  buttons: [{
+    text: 'Let\'s Go!',
+    key: 'yes',
   }]
 }];
 
