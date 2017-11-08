@@ -62,7 +62,7 @@ const App = (props) => {
   <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Minder Mental Health Bot</h1>
+            <h1 className="App-title">Minder Mental Health Bot (v0.02 Beta)</h1>
           </header>
           <p className="App-intro">
             
